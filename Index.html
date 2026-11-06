@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gwalior Pani Puri King</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#fff8ed;color:#292016}
+header{background:#a51d16;color:white;text-align:center;padding:25px 12px}
+header h1{margin:5px;font-size:27px}
+header p{margin:8px}
+.container{max-width:500px;margin:20px auto;padding:20px}
+.card{background:white;padding:20px;border-radius:15px;box-shadow:0 3px 15px #ddd}
+h2{color:#a51d16;text-align:center}
+label{display:block;margin-top:15px;font-weight:bold}
+input,select,textarea{width:100%;padding:13px;margin-top:7px;border:1px solid #ccc;border-radius:8px;font-size:16px}
+button{width:100%;padding:15px;background:#168b42;color:white;border:0;border-radius:9px;font-size:18px;font-weight:bold;margin-top:20px}
+footer{text-align:center;padding:20px;color:#777}
+</style>
+</head>
+<body>
+
+<header>
+<h1>👑 GWALIOR PANI PURI KING 👑</h1>
+<p>स्वाद ऐसा कि दिल खुश हो जाए!</p>
+<p>ऑनलाइन ऑर्डर करें</p>
+</header>
+
+<div class="container">
+<div class="card">
+<h2>🥗 अपना ऑर्डर बुक करें</h2>
+
+<form id="orderForm">
+
+<label>आपका नाम</label>
+<input id="name" required placeholder="अपना नाम लिखें">
+
+<label>मोबाइल नंबर</label>
+<input id="phone" type="tel" required placeholder="10 अंकों का नंबर" pattern="[0-9]{10}">
+
+<label>पानी पूरी प्लेट</label>
+<select id="plates">
+<option value="1">1 प्लेट</option>
+<option value="2">2 प्लेट</option>
+<option value="3">3 प्लेट</option>
+<option value="4">4 प्लेट</option>
+<option value="5">5 प्लेट</option>
+<option value="10">10 प्लेट</option>
+</select>
+
+<label>पता</label>
+<textarea id="address" required placeholder="अपना पूरा पता लिखें"></textarea>
+
+<label>पेमेंट का तरीका</label>
+<select id="payment">
+<option>Cash on Delivery (COD)</option>
+<option>UPI Payment</option>
+</select>
+
+<button type="submit">WhatsApp पर ऑर्डर करें</button>
+</form>
+</div>
+</div>
+
+<footer>
+<p>❤️ धन्यवाद! Gwalior Pani Puri King</p>
+</footer>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit",function(e){
+e.preventDefault();
+
+const name=document.getElementById("name").value;
+const phone=document.getElementById("phone").value;
+const plates=document.getElementById("plates").value;
+const address=document.getElementById("address").value;
+const payment=document.getElementById("payment").value;
+
+const whatsappNumber="919914078852";
+
+const message=
+"नया पानी पूरी ऑर्डर\n"+
+"नाम: "+name+"\n"+
+"मोबाइल: "+phone+"\n"+
+"प्लेट: "+plates+"\n"+
+"पता: "+address+"\n"+
+"पेमेंट: "+payment;
+
+const url="https://wa.me/"+whatsappNumber+"?text="+encodeURIComponent(message);
+
+window.location.href=url;
+});
+</script>
+
+</body>
+</html>
